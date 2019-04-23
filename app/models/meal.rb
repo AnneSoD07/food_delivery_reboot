@@ -7,4 +7,8 @@ class Meal
     @name = attributes[:name]
     @price = attributes[:price]
   end
+
+  def to_csv_row
+    [id, name, price]
+  end
 end

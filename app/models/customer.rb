@@ -7,4 +7,8 @@ class Customer
     @name = attributes[:name]
     @address = attributes[:address]
   end
+
+  def to_csv_row
+    [id, name, address]
+  end
 end

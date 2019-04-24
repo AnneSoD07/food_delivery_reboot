@@ -1,15 +1,15 @@
 class Router
-  def initialize(meals_controller, customers_controller)
+  def initialize(meals_controller, customers_controller, sessions_controller)
     @meals_controller = meals_controller
     @customers_controller = customers_controller
-    @running = true
+    @sessions_controller = sessions_controller
   end
 
   def run
     puts "Bienvenue"
-
-    while @running
-      action = display_menu
+    @employee = @sessions_controller.sign_in
+    while @employee
+      action = @employee.manager? ? display_manager_menu : display_delivery_guy_menu
       route(action)
     end
   end
@@ -26,7 +26,12 @@ class Router
     end
   end
 
-  def display_menu
+  def display_delivery_guy_menu
+    puts "TODO DELIVERY GUY MENU"
+    gets.chomp.to_i
+  end
+
+  def display_manager_menu
     puts "1 - List meals"
     puts "2 - Add meal"
     puts "3 - List customers"
@@ -36,6 +41,6 @@ class Router
   end
 
   def stop
-    @running = false
+    @employee = nil
   end
 end

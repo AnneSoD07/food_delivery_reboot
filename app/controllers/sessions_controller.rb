@@ -13,9 +13,7 @@ class SessionsController
     password = @view.ask_for('password')
     # chercher un user qui match sur le username
     employee = @employee_repository.find_by_username(username)
-    if employee && employee.password == password
-      return employee
-    end
+    return employee if employee && employee.password == password
 
     @view.wrong_credentials
     sign_in

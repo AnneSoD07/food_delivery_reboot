@@ -10,15 +10,10 @@ class Router
     puts "Bienvenue"
     @employee = @sessions_controller.sign_in
     while @employee
-
       if @employee.manager?
-        display_manager_menu
-        action = gets.chomp.to_i
-        route(action)
+        manager_procedure
       else
-        display_delivery_guy_menu
-        action = gets.chomp.to_i
-        route_delivery(action)
+        route_delivery_guy_procedure
       end
     end
   end
@@ -63,5 +58,17 @@ class Router
 
   def stop
     @employee = nil
+  end
+
+  def manager_procedure
+    display_manager_menu
+    action = gets.chomp.to_i
+    route(action)
+  end
+
+  def route_delivery_guy_procedure
+    display_delivery_guy_menu
+    action = gets.chomp.to_i
+    route_delivery(action)
   end
 end

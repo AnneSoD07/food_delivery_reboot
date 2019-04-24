@@ -3,7 +3,7 @@ require 'byebug'
 class OrdersView
   def display_all(orders)
     orders.each do |order|
-      puts "#{order.id} - #{order.meal.name} #{order.employee.username} #{order.customer.name}"
+      puts "#{order.id} - #{order.customer.name} #{order.meal.name} #{order.employee.username}"
     end
   end
 

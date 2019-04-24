@@ -10,7 +10,6 @@ class OrderRepository < BaseRepository
     super(csv_file)
   end
 
-
   def build_element(row)
     row[:id] = row[:id].to_i
     row[:delivered] = row[:delivered] == 'true'

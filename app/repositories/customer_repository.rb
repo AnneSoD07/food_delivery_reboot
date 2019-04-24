@@ -7,6 +7,6 @@ class CustomerRepository < BaseRepository
   end
 
   def csv_headers
-    %w(id name address)
+    %w[id name address]
   end
 end

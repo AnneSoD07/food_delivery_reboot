@@ -48,6 +48,7 @@ class Router
   def display_delivery_guy_menu
     puts "1 - List undelivered orders"
     puts "2 - Mark one as delivered"
+    puts "0 - Quit"
   end
 
   def display_manager_menu

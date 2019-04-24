@@ -17,4 +17,8 @@ class Order
   def deliver!
     @delivered = true
   end
+
+  def to_csv_row
+    [id, delivered?, meal.id, employee.id, customer.id]
+  end
 end

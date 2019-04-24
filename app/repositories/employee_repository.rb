@@ -21,6 +21,6 @@ class EmployeeRepository < BaseRepository
   end
 
   def csv_headers
-    %w(id username password role)
+    %w[id username password role]
   end
 end

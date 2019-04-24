@@ -9,6 +9,6 @@ class MealRepository < BaseRepository
   end
 
   def csv_headers
-    %w(id name price)
+    %w[id name price]
   end
 end

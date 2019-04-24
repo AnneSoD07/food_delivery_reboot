@@ -3,8 +3,14 @@ require_relative 'base_repository'
 require_relative '../models/employee'
 
 class EmployeeRepository < BaseRepository
+  undef_method :add
+
   def find_by_username(username)
     @elements.find { |element| element.username == username }
+  end
+
+  def all_delivery_guys
+    @elements.select { |employee| employee.delivery_guy? }
   end
 
   private
